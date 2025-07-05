@@ -1,12 +1,5 @@
-import React from "react";
-
-interface ProductCardProps {
-  title: string;
-  origin: string;
-  price: number;
-  currency: "RUB" | "USD" | "EUR";
-  imageUrl: string;
-}
+import type { ProductCardProps } from '@/types/ProductCard';
+import React from 'react';
 
 export const ProductCard: React.FC<ProductCardProps> = ({
   title,
@@ -19,13 +12,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     const amount = price / 100;
 
     const localeMap = {
-      RUB: "ru-RU",
-      USD: "en-US",
-      EUR: "de-DE",
+      RUB: 'ru-RU',
+      USD: 'en-US',
+      EUR: 'de-DE',
     };
 
     return new Intl.NumberFormat(localeMap[currency], {
-      style: "currency",
+      style: 'currency',
       currency,
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
