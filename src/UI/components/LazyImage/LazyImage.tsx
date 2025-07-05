@@ -1,27 +1,26 @@
 import { useImageLoader } from '@hooks/useImageLoader';
 
-export const ImageWithLoader = ({
-  src,
-  alt,
-}: {
-  src: string;
-  alt?: string;
-}) => {
+export const LazyImage = ({ src }: { src: string }) => {
   const { loading, error, handleLoad, handleError } = useImageLoader();
 
   return (
-    <div className="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-image flex items-center justify-center">
+    <div className="relative w-full h-[200px] rounded overflow-hidden flex items-center justify-center bg-gray-800">
       {loading && (
         <div
-          className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-secondary motion-reduce:animate-[spin_1.5s_linear_infinite]"
+          className="absolute z-10 h-8 w-8 animate-spin rounded-full border-4 border-solid border-white border-e-transparent"
           role="status"
         />
       )}
 
       {error ? (
-        <div className="error">Ошибка загрузки</div>
+        <div className="text-white text-center">Ошибка загрузки</div>
       ) : (
-        <img src={src} alt={alt} onLoad={handleLoad} onError={handleError} />
+        <img
+          src={src}
+          onLoad={handleLoad}
+          onError={handleError}
+          className="w-full h-full object-cover"
+        />
       )}
     </div>
   );

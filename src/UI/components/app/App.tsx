@@ -4,11 +4,11 @@ import { products } from '@constants/products';
 function App() {
   return (
     <div className="container flex justify-center flex-col">
-      <h1 className="text-2xl text-blue-300 font-bold text-center pb-7">
+      <h1 className="text-2xl text-black font-bold text-center">
         Каталог товаров
       </h1>
 
-      <div className="grid grid-cols-4 gap-x-6 gap-y-15 max-xl:grid-cols-3 max-sm:grid-cols-2 max-xs:grid-cols-1 cursor-pointer max-xl:ml-6 max-xl:mr-6">
+      <div className=" grid grid-cols-4 gap-x-7 gap-y-7 p-7 max-xl:grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 max-lg:p-12 max-sm:gap-y-5 max-sm:gap-x-4">
         {products.map((product) => (
           <ProductCard
             key={product.id}

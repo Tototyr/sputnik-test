@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "normalize.css";
+@import 'tailwindcss';
+@import 'normalize.css';
 
 @theme {
   --breakpoint-*: initial;
@@ -8,13 +8,31 @@
   --breakpoint-md: 800px;
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
-  --breakpoint-xs: 500px;
-
+  --breakpoint-xxl: 1400px;
 
   --color-card: #669bbc;
   --color-image: #457b9d;
 }
 
+@keyframes gradient-x {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-border {
+  background: linear-gradient(270deg, #86efac, #3b82f6, #a855f7);
+  background-size: 200% 200%;
+  animation: gradient-x 4s ease infinite;
+  padding: 4px;
+  border-radius: 0.5rem;
+}
 
 .container {
   max-width: 1440px;
@@ -29,10 +47,9 @@ html {
 
 body {
   height: 100%;
-  background-color: #e9ecef ;
+  background-color: #e9ecef;
 }
 
 #root {
   height: 100%;
-
 }

@@ -1,7 +1,7 @@
 import type { ProductCardProps } from '@/types/ProductCard';
 import { formatPrice } from '@/utils/ProductCard.utils';
 import React from 'react';
-import { ImageWithLoader } from '@components/LazyImage/LazyImage';
+import { LazyImage } from '@components/LazyImage/LazyImage';
 
 export const ProductCard: React.FC<ProductCardProps> = ({
   title,
@@ -11,17 +11,22 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   imageUrl,
 }) => {
   return (
-    <div className="relative flex w-full flex-col rounded-xl bg-card bg-clip-border text-white shadow-md  hover:shadow-xl transition-transform duration-300 ease-in-out hover:scale-105">
-      <ImageWithLoader src={imageUrl} />
-      <div className="p-6 max-md:pb-2 max-md:px-4">
-        <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased break-words max-md:text-lg">
-          {title}
-        </h5>
-        <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased max-md:text-sm ">
-          Страна: {origin}
-        </p>
+    <div className="gradient-border w-full mx-auto transform transition-transform duration-300 hover:scale-105 cursor-pointer">
+      <div className="rounded-lg bg-gray-900 p-6 h-full w-full flex flex-col justify-evenly center">
+        <div className="flex justify-center mb-4">
+          <LazyImage src={imageUrl} />
+        </div>
+        <div className="my-4">
+          <h2 className="text-white text-2xl font-bold pb-2">{title}</h2>
+          <p className="text-gray-300 py-1">Страна: {origin}</p>
+          <p className="text-gray-300 py-1">{formatPrice(price, currency)}</p>
+        </div>
+        <div className="flex justify-end">
+          <button className="px-2 py-1 text-white border border-gray-200 font-semibold rounded hover:bg-gray-800 cursor-pointer duration-300 hover:scale-110">
+            Click Me
+          </button>
+        </div>
       </div>
-      <div className="p-6 pt-0 max-md:px-4">{formatPrice(price, currency)}</div>
     </div>
   );
 };
