@@ -1,6 +1,7 @@
 import type { ProductCardProps } from '@/types/ProductCard';
 import { formatPrice } from '@/utils/ProductCard.utils';
 import React from 'react';
+import { ImageWithLoader } from '@components/LazyImage/LazyImage';
 
 export const ProductCard: React.FC<ProductCardProps> = ({
   title,
@@ -11,19 +12,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   return (
     <div className="relative flex w-full flex-col rounded-xl bg-card bg-clip-border text-white shadow-md  hover:shadow-xl transition-transform duration-300 ease-in-out hover:scale-105">
-      <div className="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-image">
-        {imageUrl ? (
-          <img
-            src={imageUrl}
-            alt="Изображение товара"
-            className="w-full h-full object-cover"
-          />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center text-white">
-            Нет изображения
-          </div>
-        )}
-      </div>
+      <ImageWithLoader src={imageUrl} />
       <div className="p-6 max-md:pb-2 max-md:px-4">
         <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased break-words max-md:text-lg">
           {title}
