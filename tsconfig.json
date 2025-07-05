@@ -6,7 +6,7 @@
       "@UI/*": ["src/UI/*"],
       "@components/*": ["src/UI/components/*"],
       "@constants/*": ["src/constants/*"],
-      "@utils/*": ["src/UI/utils/*"],
+      "@utils/*": ["src/utils/*"],
       "@types/*": ["src/types/*"]
     },
     "types": ["node"]

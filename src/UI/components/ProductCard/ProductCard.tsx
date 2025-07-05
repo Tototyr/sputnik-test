@@ -1,4 +1,5 @@
 import type { ProductCardProps } from '@/types/ProductCard';
+import { formatPrice } from '@/utils/ProductCard.utils';
 import React from 'react';
 
 export const ProductCard: React.FC<ProductCardProps> = ({
@@ -8,23 +9,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   currency,
   imageUrl,
 }) => {
-  const formatPrice = (): string => {
-    const amount = price / 100;
-
-    const localeMap = {
-      RUB: 'ru-RU',
-      USD: 'en-US',
-      EUR: 'de-DE',
-    };
-
-    return new Intl.NumberFormat(localeMap[currency], {
-      style: 'currency',
-      currency,
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }).format(amount);
-  };
-
   return (
     <div className="relative flex w-full flex-col rounded-xl bg-card bg-clip-border text-white shadow-md  hover:shadow-xl transition-transform duration-300 ease-in-out hover:scale-105">
       <div className="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-image">
@@ -48,7 +32,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           Страна: {origin}
         </p>
       </div>
-      <div className="p-6 pt-0 max-md:px-4">{formatPrice()}</div>
+      <div className="p-6 pt-0 max-md:px-4">{formatPrice(price, currency)}</div>
     </div>
   );
 };
