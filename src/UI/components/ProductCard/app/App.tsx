@@ -1,5 +1,5 @@
-import { ProductCard } from "@/components/ProductCard";
-import { products } from "@/constants/products";
+import { ProductCard } from "@components/ProductCard";
+import { products } from "@constants/products";
 
 
 function App() {

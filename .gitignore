@@ -11,3 +11,4 @@ dist
 dist-ssr
 .idea
 .DS_Store
+package-lock.json
