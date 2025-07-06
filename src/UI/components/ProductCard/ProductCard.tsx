@@ -1,6 +1,7 @@
 import type { ProductCardProps } from '@/types/ProductCard';
 import { formatPrice } from '@/utils/ProductCard.utils';
 import { LazyImage } from '@components/LazyImage/LazyImage';
+import { FailedImageFallback } from '../FailedImageFallback/FailedImageFallback';
 
 export const ProductCard = ({
   title,
@@ -13,7 +14,10 @@ export const ProductCard = ({
     <div className="gradient-border w-full mx-auto transform transition-transform duration-300 hover:scale-105 cursor-pointer">
       <div className="rounded-lg bg-gray-900 p-6 h-full w-full flex flex-col justify-evenly center">
         <div className="flex justify-center mb-4">
-          <LazyImage src={imageUrl} />
+          <LazyImage
+            src={imageUrl}
+            fallbackComponent={<FailedImageFallback />}
+          />
         </div>
         <div className="my-4">
           <h2 className="text-white text-2xl font-bold pb-2">{title}</h2>
