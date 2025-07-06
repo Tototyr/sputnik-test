@@ -1,8 +1,9 @@
+import type { ImageLoader } from '@/types/imageLoader';
 import { useCallback, useState } from 'react';
 
-export function useImageLoader() {
+export const useImageLoader = (): ImageLoader => {
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState<boolean>(false);
 
   const handleLoad = useCallback(() => {
     setLoading(false);
@@ -20,4 +21,4 @@ export function useImageLoader() {
     handleLoad,
     handleError,
   };
-}
+};

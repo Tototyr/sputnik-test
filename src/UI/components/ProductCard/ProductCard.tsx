@@ -1,15 +1,14 @@
 import type { ProductCardProps } from '@/types/ProductCard';
 import { formatPrice } from '@/utils/ProductCard.utils';
-import React from 'react';
 import { LazyImage } from '@components/LazyImage/LazyImage';
 
-export const ProductCard: React.FC<ProductCardProps> = ({
+export const ProductCard = ({
   title,
   origin,
   price,
   currency,
   imageUrl,
-}) => {
+}: ProductCardProps) => {
   return (
     <div className="gradient-border w-full mx-auto transform transition-transform duration-300 hover:scale-105 cursor-pointer">
       <div className="rounded-lg bg-gray-900 p-6 h-full w-full flex flex-col justify-evenly center">
