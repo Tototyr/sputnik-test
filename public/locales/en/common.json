@@ -1,5 +1,7 @@
 {
   "country": "Country",
-  "button": "Buy",
-  "image-error": "Image loading error"
+  "catalog": "Product List",
+  "product_card": {
+    "button": "Buy"
+  }
 }
