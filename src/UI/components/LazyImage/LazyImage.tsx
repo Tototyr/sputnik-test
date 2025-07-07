@@ -1,16 +1,15 @@
 import { useImageLoader } from '@hooks/useImageLoader';
-import type { ReactNode } from 'react';
 
-type LazyImageProps = {
-  src: string;
-  fallbackComponent?: ReactNode;
-};
+import type { LazyImageProps } from './LazyImage.types';
 
 export const LazyImage = ({ src, fallbackComponent }: LazyImageProps) => {
   const loader = useImageLoader();
 
   return (
-    <div className="relative w-full h-[200px] rounded overflow-hidden bg-gray-800">
+    <figure
+      className="relative w-full h-[200px] rounded overflow-hidden bg-gray-800"
+      aria-busy={loader.loading}
+    >
       {!loader.error && (
         <img
           src={src}
@@ -25,6 +24,7 @@ export const LazyImage = ({ src, fallbackComponent }: LazyImageProps) => {
       {loader.loading && (
         <div
           role="status"
+          aria-label="Загрузка изображения"
           className="absolute inset-0 flex items-center justify-center animate-pulse bg-gray-700"
         >
           <div className="flex items-center justify-center w-full h-full bg-gray-300 dark:bg-gray-700">
@@ -42,10 +42,13 @@ export const LazyImage = ({ src, fallbackComponent }: LazyImageProps) => {
       )}
 
       {loader.error && fallbackComponent && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-800">
+        <figcaption
+          role="alert"
+          className="absolute inset-0 flex items-center justify-center bg-gray-800 text-center text-red-500 p-2"
+        >
           {fallbackComponent}
-        </div>
+        </figcaption>
       )}
-    </div>
+    </figure>
   );
 };

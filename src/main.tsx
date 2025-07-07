@@ -1,7 +1,9 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+
+import '@i18next/i18n';
 import './index.css';
-import '@/utils/i18n';
+
 import App from '@components/app/App';
 
 createRoot(document.getElementById('root')!).render(

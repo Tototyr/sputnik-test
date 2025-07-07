@@ -16,6 +16,7 @@ export default defineConfig({
       '@types': path.resolve(__dirname, 'src/types'),
       '@pages': path.resolve(__dirname, 'src/UI/pages'),
       '@hooks': path.resolve(__dirname, 'src/hooks'),
+      '@i18next': path.resolve(__dirname, 'src/i18next'),
     },
   },
 });

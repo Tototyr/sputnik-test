@@ -11,7 +11,8 @@ function App() {
       <div className=" grid grid-cols-4 gap-x-7 gap-y-7 p-7 max-xl:grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 max-lg:p-12 max-sm:gap-y-5 max-sm:gap-x-4">
         {products.map((product) => (
           <ProductCard
-            key={product.id}
+            id={product.key}
+            key={product.key}
             title={product.title}
             origin={product.origin}
             price={product.price}
