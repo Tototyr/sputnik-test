@@ -1,6 +1,8 @@
-import { products } from '@/constants/products';
-import { ProductCardList } from '../components/ProductCardList';
 import { t } from 'i18next';
+
+import { products } from '@constants/products';
+
+import { ProductCardList } from '../components/ProductCardList';
 
 function App() {
   return (

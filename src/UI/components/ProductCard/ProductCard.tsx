@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
 
-import { formatPrice } from '@/UI/components/ProductCard/ProductCard.utils';
 import { LazyImage } from '@components/LazyImage/LazyImage';
 
-import { FailedImageFallback } from '../FailedImageFallback/FailedImageFallback';
 import type { ProductCardProps } from './ProductCard.types';
+import { formatPrice } from './ProductCard.utils';
+import { FailedImageFallback } from '../FailedImageFallback/FailedImageFallback';
 
 export const ProductCard = ({
   title,

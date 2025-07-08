@@ -1,9 +1,10 @@
-import type { ImageLoader } from '@/types/imageLoader';
 import { useCallback, useState } from 'react';
 
-export const useImageLoader = (): ImageLoader => {
+import type { ImageLoaderState } from '@shared-types/ImageLoaderState';
+
+export const useImageLoader = (): ImageLoaderState => {
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<boolean>(false);
+  const [error, setError] = useState(false);
 
   const handleLoad = useCallback(() => {
     setLoading(false);

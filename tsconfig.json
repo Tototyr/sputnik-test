@@ -6,8 +6,8 @@
       "@UI/*": ["src/UI/*"],
       "@components/*": ["src/UI/components/*"],
       "@constants/*": ["src/constants/*"],
+      "@shared-types/*": ["src/types/*"],
       "@utils/*": ["src/utils/*"],
-      "@types/*": ["src/types/*"],
       "@hooks/*": ["src/hooks/*"],
       "@i18next/*": ["src/i18next/*"]
     },

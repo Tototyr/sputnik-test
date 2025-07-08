@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
-import { ProductCard } from '../ProductCard/ProductCard';
 import type { ProductCardListProps } from './ProductCardList.types';
+import { ProductCard } from '../ProductCard/ProductCard';
 
 export const ProductCardList: FC<ProductCardListProps> = ({ data }) => {
   return (
