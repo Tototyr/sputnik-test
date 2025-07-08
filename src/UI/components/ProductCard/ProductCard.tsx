@@ -16,7 +16,7 @@ export const ProductCard = ({
   const { t } = useTranslation();
 
   return (
-    <article className="gradient-border w-full mx-auto transform transition-transform duration-300 hover:scale-105 cursor-pointer">
+    <article className="gradient-border w-full h-full mx-auto transform transition-transform duration-300 hover:scale-105 cursor-pointer">
       <div className="rounded-lg bg-gray-900 p-6 h-full w-full flex flex-col justify-evenly center">
         <figure className="flex justify-center mb-4">
           <LazyImage
